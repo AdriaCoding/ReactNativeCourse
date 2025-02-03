@@ -12,9 +12,14 @@ function App() {
   ]);
 
   const addNewGoalHandler = (newGoal) => {
-    //use concat instead of push because react wants 
+    // use concat instead of push because react wants 
     // us to return a new array to re-render the component.
-    setCourseGoals(courseGoals.concat(newGoal));
+    // setCourseGoals(courseGoals.concat(newGoal));
+    // The update state operations need to be scheduled,
+    // Which means our state update can be deferred due to race conditions.
+    // The functional approach mantains the correct order of updates,
+    // as we are expliciting the state dependencies.
+    setCourseGoals(prevCourseGoals => prevCourseGoals.concat(newGoal));
   }
 
   return (
