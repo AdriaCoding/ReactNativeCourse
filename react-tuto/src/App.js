@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import GoalList from './components/GoalList';
+import GoalList from './components/GoalList/GoalList';
 function App() {
   const courseGoals = [
     {id: 'cg1', text: 'Finish the Course'},
