@@ -49,6 +49,7 @@ export default function App() {
               </View>
             );
           }}
+          keyExtractor={(item, index) => index.toString()}
           alwaysBounceVertical={false}
         /> 
       </View>
