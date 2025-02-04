@@ -20,6 +20,9 @@ export default function App() {
     ])
     console.log(courseGoals);
   };
+  function deleteGoalHandler(){
+    console.log('DELETE');
+  }
 
   return (
     <View style={styles.appContainer}>
@@ -30,7 +33,10 @@ export default function App() {
         <FlatList 
           data={courseGoals}
           renderItem={(itemData) => {
-            return <GoalItem text={itemData.item} />
+            return <GoalItem 
+              text={itemData.item}
+              onDeleteItem={deleteGoalHandler}
+            />
           }}
           keyExtractor={(item, index) => {
             console.log('index:', index, 'item:', item);
