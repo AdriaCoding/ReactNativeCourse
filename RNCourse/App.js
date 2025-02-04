@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { StyleSheet, View, Button, FlatList } from "react-native";
+import { StyleSheet, View, Button, FlatList, Image } from "react-native";
 import GoalItem from "./components/GoalItem";
 import GoalInput from "./components/GoalInput";
 export default function App() {
