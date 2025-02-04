@@ -3,8 +3,8 @@ import { Button, StyleSheet, Text, View } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Hola</Text>
-      <Text>Hello World!</Text>
+      <Text>Marti</Text>
+      <Text style={{margin: 20, borderWidth: 1, borderColor: 'red', padding: 23}}>Hello World!</Text>
       <View>
         <Button title='Pínchame '/>
       </View>
@@ -19,8 +19,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  text: {
-    fontSize: 40,
-    color: 'red',
-  }
 });
