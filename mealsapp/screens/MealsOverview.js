@@ -20,8 +20,13 @@ function MealsOverviewScreen({ route, navigation }) {
     });
   }, [categoryId, navigation]);
 
+  
   function renderMealItem(itemData) {
     const item = itemData.item;
+    function pressHandler() {
+      console.log("pressHandler");
+      navigation.navigate("MealDetail", { mealId: item.id });
+    }
 
     const mealItemProps = {
       title: item.title,
@@ -29,6 +34,7 @@ function MealsOverviewScreen({ route, navigation }) {
       complexity: item.complexity,
       duration: item.duration,
       affordability: item.affordability,
+      onPress: pressHandler,
     };
     return <MealItem {...mealItemProps} />;
   }
