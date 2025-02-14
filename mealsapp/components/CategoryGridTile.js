@@ -7,7 +7,7 @@ function CategoryGridTile({ title, color }) {
         style={({ pressed }) => [styles.button,
           pressed ? styles.buttonPressed : null,
         ]}
-        android_ripple={{ color: "lightgrey" }}
+        android_ripple={{ color: "#ed1616" }}
       >
         <View style={[styles.innerContainer,  { backgroundColor: color }]}>
           <Text>{title}</Text>
