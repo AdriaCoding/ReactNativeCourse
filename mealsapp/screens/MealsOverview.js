@@ -1,4 +1,5 @@
 import { View, Text, StyleSheet, FlatList } from "react-native";
+import { useEffect } from "react";
 import { MEALS, CATEGORIES } from "../data/dummy-data";
 import MealItem from "../components/MealItem";
 
@@ -9,13 +10,15 @@ function MealsOverviewScreen({ route, navigation }) {
     return mealItem.categoryIds.indexOf(categoryId) >= 0;
   });
 
-  const categoryTitle = CATEGORIES.find((c) => {
-    return c.id === categoryId;
-  }).title
-  console.log(categoryTitle);
-  navigation.setOptions({
-    title: categoryTitle,
-  });
+  useEffect(()=>{
+    const categoryTitle = CATEGORIES.find((c) => {
+      return c.id === categoryId;
+    }).title
+    
+    navigation.setOptions({
+      title: categoryTitle,
+    });
+  }, [categoryId, navigation]);
 
   function renderMealItem(itemData) {
     const item = itemData.item;
