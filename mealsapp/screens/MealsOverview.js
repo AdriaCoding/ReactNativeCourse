@@ -10,15 +10,26 @@ function MealsOverviewScreen({ route }) {
   });
 
   function renderMealItem(itemData) {
-    return <MealItem title={itemData.item.title}/>;
+    const item = itemData.item;
+
+    const mealItemProps = {
+      title: item.title,
+      imageUrl: item.imageUrl,
+      complexity: item.complexity,
+      duration: item.duration,
+      affordability: item.affordability,
+    };
+    return <MealItem {...mealItemProps} />;
   }
 
   console.log(categoryId);
   return (
     <View style={styles.container}>
-      <FlatList data={displayedMeals} keyExtractor={
-        (item) => item.id
-      } renderItem={renderMealItem} />
+      <FlatList
+        data={displayedMeals}
+        keyExtractor={(item) => item.id}
+        renderItem={renderMealItem}
+      />
     </View>
   );
 }
