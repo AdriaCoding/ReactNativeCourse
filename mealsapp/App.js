@@ -29,7 +29,11 @@ export default function App() {
               title: "Categorías de Comida",
             }}
           />
-          <Stack.Screen name="MealsOverview" component={MealsOverviewScreen} />
+          <Stack.Screen name="MealsOverview" component={MealsOverviewScreen} 
+            options={({route, navigation})=>{
+              return {title:route.params.categoryId};
+            }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </>
